@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
+
 require('dotenv').config();
 
 const db = require('./database');
@@ -7,6 +9,9 @@ const db = require('./database');
 const app = express();
 
 const PORT = Number(process.env.PORT) || 5000;
+
+// React production build location
+const frontendDistPath = path.join(__dirname, '..', 'dist');
 
 // -------------------------
 // Middleware
@@ -16,10 +21,10 @@ app.use(cors());
 app.use(express.json());
 
 // -------------------------
-// Home route
+// Backend health route
 // -------------------------
 
-app.get('/', (req, res) => {
+app.get('/api/health', (req, res) => {
   res.json({
     success: true,
     message: 'SEOOnly backend is running',
@@ -57,8 +62,7 @@ app.post('/api/audit', (req, res) => {
     if (!['http:', 'https:'].includes(parsedUrl.protocol)) {
       return res.status(400).json({
         success: false,
-        message:
-          'Website URL must start with http:// or https://',
+        message: 'Website URL must start with http:// or https://',
       });
     }
 
@@ -438,24 +442,47 @@ app.delete('/api/contacts/:id', (req, res) => {
 
     res.status(500).json({
       success: false,
-      message: 'Unable to delete contact.',
+      message: 'Unable to delete contact',
     });
   }
 });
 
 // -------------------------
+// Serve React frontend
+// -------------------------
+
+app.use(express.static(frontendDistPath));
+
+// -------------------------
+// React SPA fallback
+// -------------------------
+
+app.use((req, res, next) => {
+  if (req.method !== 'GET' || req.path.startsWith('/api/')) {
+    return next();
+  }
+
+  res.sendFile(path.join(frontendDistPath, 'index.html'));
+});
+
+// -------------------------
 // Start server
 // -------------------------
+
 const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(
-    `SEOOnly backend running on http://127.0.0.1:${PORT}`
+    `SEOOnly server running on port ${PORT}`
+  );
+
+  console.log(
+    `Frontend build path: ${frontendDistPath}`
   );
 });
 
 server.on('error', (error) => {
-  console.error('SEOOnly backend failed to start:', error);
+  console.error('SEOOnly server failed to start:', error);
 });
 
 server.on('listening', () => {
-  console.log('Backend is actively listening for requests.');
+  console.log('Server is actively listening for requests.');
 });
