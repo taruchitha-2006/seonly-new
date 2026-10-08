@@ -1,6 +1,17 @@
 const Database = require('better-sqlite3');
+const fs = require('fs');
+const path = require('path');
 
-const db = new Database('seonly.db');
+const databasePath =
+  process.env.DB_PATH || path.join(__dirname, 'seonly.db');
+
+const databaseDirectory = path.dirname(databasePath);
+
+fs.mkdirSync(databaseDirectory, {
+  recursive: true,
+});
+
+const db = new Database(databasePath);
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS seo_audits (
