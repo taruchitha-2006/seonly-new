@@ -658,6 +658,190 @@ function Home() {
           </div>
         </div>
       </section>
+      
+{/* =====================================================
+    CLIENT COLLABORATION — PROFESSIONAL PHOTO SECTION
+===================================================== */}
+<section className="collaboration-section">
+  <div className="container collaboration-grid">
+    <div className="collaboration-image-wrap">
+      <img
+        src="/client-collaboration.png"
+        alt="Professionals collaborating on a laptop during a business meeting"
+        className="collaboration-image"
+      />
+
+      <div className="collaboration-note">
+        <span className="collaboration-note-dot"></span>
+        <div>
+          <strong>Strategy built together</strong>
+          <span>Clear insights. Practical next steps.</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="collaboration-copy">
+      <span className="new-section-label">
+        PARTNERSHIP THAT MOVES YOU FORWARD
+      </span>
+
+      <h2>
+        Great results start with
+        <span> working together.</span>
+      </h2>
+
+      <p>
+        We work alongside your team to understand your business,
+        strengthen your search visibility, and turn insights into
+        practical actions that support sustainable growth.
+      </p>
+
+      <div className="collaboration-points">
+        <div>
+          <Check size={17} />
+          Clear priorities and practical recommendations
+        </div>
+
+        <div>
+          <Check size={17} />
+          Reporting that makes progress understandable
+        </div>
+
+        <div>
+          <Check size={17} />
+          A strategy tailored to your business
+        </div>
+      </div>
+
+      <Link to="/contact" className="collaboration-button">
+        Talk to our team
+        <ArrowUpRight size={17} />
+      </Link>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       {/* =====================================================
           AI ANSWER PREVIEW

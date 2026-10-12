@@ -1,4 +1,6 @@
+
 import { useEffect, useState } from 'react';
+import './Contacts.css';
 
 function Contacts() {
   const [contacts, setContacts] = useState([]);
@@ -23,8 +25,7 @@ function Contacts() {
         setContacts(data.contacts);
       } catch (err) {
         setError(
-          err.message ||
-            'Unable to connect to the SEOOnly backend.'
+          err.message || 'Unable to connect to the SEOOnly backend.'
         );
       } finally {
         setLoading(false);
@@ -36,18 +37,22 @@ function Contacts() {
 
   return (
     <section className="contacts-page">
+      <div className="contacts-floating-decor" aria-hidden="true">
+        <span className="float-star">✦</span>
+        <span className="float-heart">♡</span>
+        <span className="float-flower">✿</span>
+        <span className="float-sparkle">✧</span>
+        <span className="float-heart float-heart-two">♥</span>
+        <span className="float-star float-star-two">✦</span>
+      </div>
+
       <div className="container">
         <div className="contacts-header">
           <div>
-            <span className="section-label">
-              CONTACT ENQUIRIES
-            </span>
-
+            <span className="section-label">CONTACT ENQUIRIES</span>
             <h1>Saved Contact Enquiries</h1>
-
             <p>
-              View enquiries submitted through the SEOOnly
-              website.
+              View enquiries submitted through the SEOOnly website.
             </p>
           </div>
 
@@ -94,31 +99,17 @@ function Contacts() {
                 {contacts.map((contact) => (
                   <tr key={contact.id}>
                     <td>#{contact.id}</td>
-
-                    <td>
-                      <strong>{contact.name}</strong>
-                    </td>
-
+                    <td><strong>{contact.name}</strong></td>
                     <td>{contact.email}</td>
-
-                    <td>
-                      {contact.phone || '—'}
-                    </td>
-
-                    <td>
-                      {contact.company || '—'}
-                    </td>
-
+                    <td>{contact.phone || '—'}</td>
+                    <td>{contact.company || '—'}</td>
                     <td>
                       <span className="contact-message-text">
                         {contact.message}
                       </span>
                     </td>
-
                     <td>
-                      {new Date(
-                        contact.created_at
-                      ).toLocaleString()}
+                      {new Date(contact.created_at).toLocaleString()}
                     </td>
                   </tr>
                 ))}

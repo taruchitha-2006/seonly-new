@@ -1,0 +1,103 @@
+
+/* =========================================================
+   SEOONLY BRAND LOGO — BLACK & BLUE
+   Slightly larger size with clean, professional styling
+========================================================= */
+
+.seoonly-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  flex-shrink: 0;
+  color: #111827;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.seoonly-brand-mark {
+  display: block;
+  width: 49px;
+  height: 49px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.seoonly-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.seoonly-brand-name {
+  display: flex;
+  align-items: center;
+  color: #111827;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -1.8px;
+  line-height: 0.95;
+}
+
+.seoonly-brand-accent {
+  color: #2563EB;
+  transition: color 0.2s ease;
+}
+
+.seoonly-brand-tagline {
+  color: #64748B;
+  font-family: "Manrope", sans-serif;
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  white-space: nowrap;
+}
+
+.seoonly-brand:hover .seoonly-brand-accent {
+  color: #1D4ED8;
+}
+
+.seoonly-brand:focus-visible {
+  outline: 2px solid #2563EB;
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+
+/* =========================================================
+   TABLET AND MOBILE
+========================================================= */
+
+@media (max-width: 680px) {
+  .seoonly-brand {
+    gap: 8px;
+  }
+
+  .seoonly-brand-mark {
+    width: 39px;
+    height: 39px;
+  }
+
+  .seoonly-brand-name {
+    font-size: 24px;
+  }
+
+  .seoonly-brand-tagline {
+    font-size: 6px;
+    letter-spacing: 0.7px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 360px) {
+  .seoonly-brand-mark {
+    width: 33px;
+    height: 33px;
+  }
+
+  .seoonly-brand-name {
+    font-size: 21px;
+  }
+}

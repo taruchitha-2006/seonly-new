@@ -1,0 +1,1066 @@
+
+/* =====================================================
+   SEOONLY — SOFT PASTEL THEME
+   Light blue · Sage green · Pale yellow
+   No temporary test labels.
+===================================================== */
+
+:root {
+  --bg: #F7FAFD;
+  --white: #FFFFFF;
+  --surface: #FFFFFF;
+  --surface-soft: #EEF5FB;
+
+  --navy: #26384D;
+  --navy-soft: #405269;
+  --text: #2F4054;
+  --muted: #718094;
+  --muted-2: #929EAC;
+
+  --purple: #7898B8;
+  --purple-dark: #5D7D9F;
+  --purple-soft: #EAF3FC;
+
+  --blue: #7898B8;
+  --blue-soft: #EAF3FC;
+  --green: #7FA58B;
+  --green-soft: #EDF6F0;
+  --cyan: #7FAEBB;
+  --cyan-soft: #EEF7F8;
+  --yellow: #E5CC7A;
+  --yellow-soft: #FFF8E6;
+  --orange: #B79E66;
+  --orange-soft: #FFF7E5;
+
+  --border: #E2EAF1;
+  --border-strong: #D4E0EA;
+
+  --shadow-sm: 0 8px 28px rgba(38, 56, 77, 0.045);
+  --shadow-md: 0 18px 50px rgba(38, 56, 77, 0.065);
+  --shadow-lg: 0 30px 80px rgba(38, 56, 77, 0.085);
+
+  /* Compatibility with existing stylesheets */
+  --black: #26384D;
+  --seo-bg: #F7FAFD;
+  --seo-white: #FFFFFF;
+  --seo-pink-light: #EAF3FC;
+  --seo-yellow-light: #FFF8E6;
+  --seo-pink: #7898B8;
+  --seo-yellow: #E5CC7A;
+  --seo-navy: #26384D;
+  --seo-text: #2F4054;
+  --seo-muted: #718094;
+  --seo-border: #E2EAF1;
+}
+
+/* =====================================================
+   GLOBAL STYLES
+===================================================== */
+
+html {
+  scroll-behavior: smooth;
+  background: #F7FAFD;
+}
+
+body,
+#root {
+  min-height: 100vh;
+  background: #F7FAFD;
+  color: #2F4054;
+}
+
+body {
+  background-color: #F7FAFD !important;
+  color: #2F4054 !important;
+}
+
+main {
+  width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: #EAF3FC;
+  color: #26384D;
+}
+
+:focus-visible {
+  outline: 2px solid #9BB9D5;
+  outline-offset: 3px;
+}
+
+/* =====================================================
+   ALL PAGE BACKGROUNDS
+===================================================== */
+
+.visibility,
+.services,
+.contact-page,
+.admin-page,
+.search-ecosystem,
+.industries,
+.process,
+.results,
+.insights {
+  background-color: #F7FAFD !important;
+}
+
+.about-hero,
+.services-hero,
+.process-hero,
+.contact-hero,
+.case-studies-hero,
+.audit,
+.seo-audit {
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(153, 188, 220, 0.18),
+      transparent 32%
+    ),
+    #F7FAFD !important;
+}
+
+/* Soft green sections instead of dark backgrounds */
+
+.about,
+.future-search,
+.about-bottom,
+.ai-seo-section,
+.performance-section {
+  background-color: #EDF6F0 !important;
+  color: #26384D !important;
+}
+
+/* =====================================================
+   HEADINGS, TEXT AND ACCENTS
+===================================================== */
+
+.section-label,
+.eyebrow,
+.about-hero h1 span,
+.services-hero h1 span,
+.process-hero h1 span,
+.contact-hero h1 span,
+.case-studies-hero h1 span,
+.about-stat-text strong,
+.service-page-number,
+.service-page-arrow,
+.principle-number,
+.principle-arrow,
+.case-study-number,
+.case-study-result strong,
+.case-study-arrow,
+.contact-benefit > span,
+.contact-email,
+.process-step-number,
+.process-step-arrow,
+.process-bottom h2 span {
+  color: #5D7D9F !important;
+}
+
+.eyebrow-dot,
+.section-label::before {
+  background-color: #7898B8 !important;
+  box-shadow: 0 0 0 6px rgba(120, 152, 184, 0.10) !important;
+}
+
+.about-title,
+.about h2,
+.about h3,
+.future-search h2,
+.future-search h3,
+.about-bottom h2,
+.about-bottom h2 span,
+.ai-seo-content h2,
+.ai-seo-content h2 span,
+.performance-copy h2,
+.performance-copy h2 span,
+.future-heading .section-title {
+  color: #26384D !important;
+}
+
+.about-copy,
+.about p,
+.about-feature span,
+.future-search p,
+.future-list-item,
+.future-card-header span,
+.future-heading .section-copy {
+  color: #718094 !important;
+}
+
+.future-heading .section-label::before,
+.future-list-item::before,
+.industry-point::before {
+  background-color: #7FA58B !important;
+  box-shadow: none !important;
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navbar,
+.navbar-menu-panel {
+  background: rgba(247, 250, 253, 0.98) !important;
+  border-color: #E2EAF1 !important;
+}
+
+.navbar-menu-button,
+.navbar-menu-close,
+.navbar-menu-links a {
+  background-color: #FFFFFF !important;
+  border-color: #D4E0EA !important;
+  color: #26384D !important;
+}
+
+.navbar-menu-button.active {
+  background-color: #EAF3FC !important;
+  border-color: #D4E0EA !important;
+  color: #26384D !important;
+}
+
+.navbar-menu-links a:hover {
+  background: #EEF5FB !important;
+  border-color: #C9D9E8 !important;
+}
+
+.navbar-menu-links a span {
+  color: #5D7D9F !important;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.primary-button,
+.hero-primary-button,
+.navbar-audit-button {
+  background: #7898B8 !important;
+  color: #FFFFFF !important;
+  border-color: #7898B8 !important;
+  box-shadow: 0 10px 25px rgba(120, 152, 184, 0.16) !important;
+}
+
+.primary-button:hover,
+.hero-primary-button:hover,
+.navbar-audit-button:hover {
+  background: #5D7D9F !important;
+  border-color: #5D7D9F !important;
+}
+
+.secondary-button,
+.hero-secondary-button {
+  background: #FFFFFF !important;
+  border-color: #D4E0EA !important;
+  color: #26384D !important;
+}
+
+.final-cta .primary-button {
+  background: #7898B8 !important;
+  color: #FFFFFF !important;
+}
+
+/* =====================================================
+   SHARED CARDS
+===================================================== */
+
+.ecosystem-card,
+.industry-card,
+.service-card,
+.process-card,
+.result-card,
+.insight-card,
+.case-study-card,
+.dashboard,
+.chart,
+.audit-card,
+.contact-card,
+.contact-form-card,
+.admin-table-wrap,
+.performance-dashboard,
+.about-feature,
+.metric-card,
+.future-card,
+.future-card.highlight {
+  background: #FFFFFF !important;
+  color: #26384D !important;
+  border-color: #E2EAF1 !important;
+  box-shadow: var(--shadow-sm);
+}
+
+.ecosystem-card:hover,
+.industry-card:hover,
+.service-card:hover,
+.process-card:hover,
+.result-card:hover,
+.insight-card:hover,
+.case-study-card:hover {
+  border-color: #C9D9E8 !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.ecosystem-icon,
+.service-icon,
+.process-number {
+  background: #EAF3FC !important;
+  color: #5D7D9F !important;
+}
+
+.ecosystem-card::after {
+  background: #EDF6F0 !important;
+}
+
+.ecosystem-card h3,
+.industry-card h3,
+.service-card h3,
+.process-card h3,
+.result-card h3,
+.insight-card h3 {
+  color: #26384D !important;
+}
+
+.ecosystem-card p,
+.industry-card p,
+.service-card p,
+.process-card p,
+.result-card p,
+.insight-card p {
+  color: #718094 !important;
+}
+
+/* =====================================================
+   HOMEPAGE HERO BACKGROUND
+===================================================== */
+
+.hero {
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(153, 188, 220, 0.22),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 74% 68%,
+      rgba(229, 204, 122, 0.16),
+      transparent 28%
+    ),
+    #F7FAFD !important;
+}
+
+.hero::before {
+  background: radial-gradient(
+    circle,
+    rgba(153, 188, 220, 0.20),
+    transparent 68%
+  ) !important;
+}
+
+.hero h1 {
+  color: #26384D;
+}
+
+.hero-copy p {
+  color: #718094;
+}
+
+.hero-glow {
+  background: radial-gradient(
+    circle at 45% 40%,
+    rgba(153, 188, 220, 0.20),
+    rgba(127, 165, 139, 0.10) 42%,
+    transparent 73%
+  ) !important;
+}
+
+.hero-orbit,
+.orbit-one,
+.orbit-two,
+.orbit-three {
+  border-color: rgba(120, 152, 184, 0.22) !important;
+}
+
+/* =====================================================
+   CLEAN, NON-OVERLAPPING HERO GRAPHIC
+===================================================== */
+
+.hero-visual {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch !important;
+  justify-content: stretch !important;
+  gap: 14px;
+  min-height: 0 !important;
+  padding: 12px 8px;
+  transform: none !important;
+  overflow: visible;
+}
+
+/* Hide floating decorations */
+
+.hero-glow,
+.hero-orbit,
+.hero-star {
+  display: none !important;
+}
+
+/* Central dashboard */
+
+.hero-core {
+  position: relative !important;
+  grid-column: 1 / -1;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 225px;
+  padding: 0 !important;
+  border: 1px solid #DCE7F2 !important;
+  border-radius: 24px !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 16px 42px rgba(38, 56, 77, 0.07) !important;
+  overflow: hidden;
+}
+
+.hero-core-inner {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 225px;
+  padding: 28px !important;
+  border-radius: 24px !important;
+  background:
+    radial-gradient(
+      circle at 95% 5%,
+      rgba(153, 188, 220, 0.20),
+      transparent 45%
+    ),
+    #FFFFFF !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.hero-core-label {
+  margin: 0 !important;
+  color: #5D7D9F !important;
+  font-size: 10px !important;
+  text-align: left !important;
+  letter-spacing: 0.15em;
+}
+
+.hero-search-bar {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #DCE7F2 !important;
+  border-radius: 13px !important;
+  background: #F4F8FC !important;
+  color: #26384D !important;
+  font-size: 12px !important;
+}
+
+.hero-search-arrow {
+  color: #7898B8 !important;
+}
+
+.hero-core-status {
+  justify-content: flex-start !important;
+  margin-top: 0 !important;
+  color: #718094 !important;
+}
+
+.hero-core-status span {
+  background: #7FA58B !important;
+  box-shadow: 0 0 0 5px rgba(127, 165, 139, 0.12) !important;
+}
+
+/* Platform cards */
+
+.search-chip {
+  position: relative !important;
+  inset: auto !important;
+  width: 100%;
+  min-width: 0 !important;
+  min-height: 66px;
+  padding: 12px !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #E2EAF1 !important;
+  border-radius: 16px !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 6px 18px rgba(38, 56, 77, 0.04) !important;
+  color: #405269 !important;
+  font-size: 11px !important;
+  overflow: hidden;
+}
+
+.chip-google,
+.chip-chatgpt,
+.chip-gemini,
+.chip-perplexity {
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+}
+
+.search-chip:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(38, 56, 77, 0.08) !important;
+}
+
+.chip-icon {
+  width: 29px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 9px;
+}
+
+.google-icon {
+  background: #EAF3FC !important;
+  color: #5D7D9F !important;
+}
+
+.chatgpt-icon {
+  background: #EDF6F0 !important;
+  color: #628A6D !important;
+}
+
+.gemini-icon {
+  background: #FFF8E6 !important;
+  color: #9A8346 !important;
+}
+
+.perplexity-icon {
+  background: #EEF7F8 !important;
+  color: #648F9A !important;
+}
+
+/* Metric cards */
+
+.hero-metric {
+  position: relative !important;
+  inset: auto !important;
+  width: 100%;
+  min-width: 0;
+  min-height: 82px;
+  padding: 15px !important;
+  border: 1px solid #E2EAF1;
+  border-radius: 16px !important;
+  background: #EEF5FB !important;
+  color: #26384D !important;
+  box-shadow: none !important;
+}
+
+.metric-top,
+.metric-bottom {
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+}
+
+.metric-top {
+  background: #FFF8E6 !important;
+  border-color: #F0E7CA !important;
+}
+
+.metric-bottom {
+  background: #EDF6F0 !important;
+  border-color: #DCEBE0 !important;
+}
+
+.hero-metric strong {
+  color: #26384D !important;
+  font-size: 21px !important;
+}
+
+.hero-metric span {
+  margin-top: 7px !important;
+  color: #718094 !important;
+  font-size: 9px !important;
+}
+
+/* =====================================================
+   DASHBOARDS, TABLES AND STATUS DETAILS
+===================================================== */
+
+.dashboard-live,
+.case-study-industry {
+  background: #FFF8E6 !important;
+  color: #776535 !important;
+}
+
+.dashboard-growth,
+.audit-live {
+  color: #628A6D !important;
+}
+
+.audit-status,
+.dashboard-metric {
+  background: #FFFFFF !important;
+  border-color: #E2EAF1 !important;
+}
+
+.audit-status.good span:first-child {
+  background: #7FA58B !important;
+}
+
+.audit-status.improve span:first-child {
+  background: #D2B66C !important;
+}
+
+.admin-table th {
+  background: #EEF5FB !important;
+  color: #718094 !important;
+}
+
+.admin-table td {
+  color: #405269 !important;
+}
+
+/* =====================================================
+   FORMS
+===================================================== */
+
+input,
+textarea,
+select,
+.contact-form input,
+.contact-form textarea,
+.contact-form select,
+.contact-field input,
+.contact-field textarea {
+  background: #FFFFFF !important;
+  border-color: #DDE7F0 !important;
+  color: #26384D !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #929EAC !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: #9BB9D5 !important;
+  box-shadow: 0 0 0 4px rgba(153, 188, 220, 0.14) !important;
+}
+
+/* =====================================================
+   FINAL CALL TO ACTION
+===================================================== */
+
+.final-cta {
+  background:
+    radial-gradient(
+      circle at 84% 25%,
+      rgba(229, 204, 122, 0.22),
+      transparent 30%
+    ),
+    #FFF8E6 !important;
+  color: #26384D !important;
+  border-color: #F0E7CA !important;
+}
+
+.final-cta h2 {
+  color: #26384D !important;
+}
+
+.final-cta p {
+  color: #718094 !important;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+  background: #EEF5FB !important;
+  color: #26384D !important;
+  border-top: 1px solid #E2EAF1 !important;
+}
+
+.footer-logo,
+.footer-cta h3 {
+  color: #26384D !important;
+}
+
+.footer-logo::after {
+  color: #7FA58B !important;
+}
+
+.footer-description,
+.footer-email,
+.footer-column a,
+.footer-bottom span,
+.footer-legal a,
+.footer-cta small,
+.footer-column h4 {
+  color: #718094 !important;
+}
+
+.footer-cta {
+  border-color: #DDE7F0 !important;
+}
+
+.footer-column a:hover,
+.footer-email:hover {
+  color: #5D7D9F !important;
+}
+
+.footer-socials a {
+  border-color: #D4E0EA !important;
+  color: #5D7D9F !important;
+}
+
+/* =====================================================
+   RESPONSIVE HERO GRAPHIC
+===================================================== */
+
+@media (max-width: 1050px) {
+  .hero-visual {
+    gap: 12px;
+  }
+
+  .hero-core,
+  .hero-core-inner {
+    min-height: 210px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-visual {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 4px 0;
+    margin: 24px 0 0 !important;
+    min-height: 0 !important;
+    transform: none !important;
+  }
+
+  .hero-core {
+    min-height: 205px;
+  }
+
+  .hero-core-inner {
+    min-height: 205px;
+    padding: 20px !important;
+  }
+
+  .search-chip {
+    min-height: 60px;
+    padding: 9px !important;
+    gap: 7px;
+    font-size: 10px !important;
+  }
+
+  .hero-metric {
+    min-height: 72px;
+    padding: 12px !important;
+  }
+
+  .hero-metric strong {
+    font-size: 18px !important;
+  }
+
+  .hero-metric span {
+    font-size: 8px !important;
+  }
+
+  .about-features,
+  .about-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-visual {
+    gap: 8px;
+  }
+
+  .search-chip {
+    gap: 5px;
+    padding: 8px !important;
+    font-size: 9px !important;
+  }
+
+  .hero-core-inner {
+    padding: 16px !important;
+  }
+}
+
+/* =====================================================
+   SEOONLY — CONTACT ENQUIRIES PAGE REDESIGN
+   Soft colours, better spacing and subtle graphics
+===================================================== */
+
+.admin-page {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 56vh;
+  padding: 56px 0 76px !important;
+
+  background:
+    radial-gradient(
+      circle at 92% 8%,
+      rgba(153, 188, 220, 0.24),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 5% 90%,
+      rgba(229, 204, 122, 0.14),
+      transparent 24%
+    ),
+    #F7FAFD !important;
+}
+
+.admin-page .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Main white content card */
+
+.admin-heading {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  margin-bottom: 28px !important;
+  padding: 36px 40px !important;
+
+  background: linear-gradient(
+    135deg,
+    #FFFFFF 0%,
+    #FBFDFF 100%
+  ) !important;
+
+  border: 1px solid #E2EAF1;
+  border-radius: 26px;
+
+  box-shadow:
+    0 18px 45px rgba(38, 56, 77, 0.055);
+}
+
+/* Decorative pastel graphic */
+
+.admin-heading::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 20px;
+  right: 28px;
+
+  width: 105px;
+  height: 105px;
+
+  border-radius: 30px;
+  transform: rotate(8deg);
+
+  background:
+    radial-gradient(
+      circle at 25% 25%,
+      #FFFFFF 0 8%,
+      transparent 9%
+    ),
+    linear-gradient(
+      140deg,
+      #EAF3FC 0%,
+      #EDF6F0 55%,
+      #FFF8E6 100%
+    );
+}
+
+.admin-heading::after {
+  content: "↗";
+  position: absolute;
+  top: 37px;
+  right: 58px;
+
+  color: #5D7D9F;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Eyebrow / small heading */
+
+.admin-heading .eyebrow,
+.admin-heading .section-label {
+  position: relative;
+  display: inline-flex;
+  margin-bottom: 16px !important;
+
+  color: #5D7D9F !important;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+/* Main heading */
+
+.admin-heading h1 {
+  position: relative;
+  max-width: 75%;
+
+  margin: 0 0 12px !important;
+
+  color: #26384D !important;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(30px, 4vw, 44px) !important;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+}
+
+/* Description */
+
+.admin-heading p {
+  color: #718094 !important;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Enquiry count badge */
+
+.admin-heading p:nth-of-type(2) {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  width: fit-content;
+  margin-top: 22px !important;
+  margin-bottom: 10px !important;
+  padding: 12px 16px;
+
+  border: 1px solid #DCE7F2;
+  border-radius: 13px;
+
+  background: #EEF5FB !important;
+  color: #405269 !important;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Highlight the count if it is in a strong element */
+
+.admin-heading p:nth-of-type(2) strong {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 34px;
+  min-height: 34px;
+  padding: 5px;
+
+  border-radius: 10px;
+  background: #FFFFFF;
+  color: #5D7D9F;
+  font-size: 17px;
+}
+
+/* Error message: visible but visually softer */
+
+.admin-heading p:nth-of-type(3) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 10px !important;
+  padding: 10px 14px;
+
+  border: 1px solid #F0E7CA;
+  border-radius: 12px;
+
+  background: #FFF8E6 !important;
+  color: #806F43 !important;
+  font-size: 12px;
+}
+
+/* Improve any enquiries table below the heading */
+
+.admin-table-wrap {
+  overflow-x: auto;
+
+  border: 1px solid #E2EAF1 !important;
+  border-radius: 20px !important;
+  background: #FFFFFF !important;
+
+  box-shadow:
+    0 12px 32px rgba(38, 56, 77, 0.045) !important;
+}
+
+.admin-table th {
+  padding: 16px 18px;
+  background: #EEF5FB !important;
+  color: #5D7D9F !important;
+}
+
+.admin-table td {
+  padding: 16px 18px;
+  color: #405269 !important;
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* =====================================================
+   MOBILE RESPONSIVENESS
+===================================================== */
+
+@media (max-width: 700px) {
+  .admin-page {
+    min-height: 0;
+    padding: 32px 0 48px !important;
+  }
+
+  .admin-heading {
+    padding: 26px 22px !important;
+    border-radius: 21px;
+  }
+
+  .admin-heading::before {
+    top: 14px;
+    right: 14px;
+    width: 66px;
+    height: 66px;
+    border-radius: 20px;
+  }
+
+  .admin-heading::after {
+    top: 27px;
+    right: 32px;
+    font-size: 25px;
+  }
+
+  .admin-heading h1 {
+    max-width: 100%;
+    padding-right: 0;
+    font-size: 30px !important;
+  }
+
+  .admin-heading p {
+    font-size: 13px;
+  }
+
+  .admin-heading p:nth-of-type(2),
+  .admin-heading p:nth-of-type(3) {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,474 @@
+
+/* =========================================
+   SEOOnly - Saved Contact Enquiries
+========================================= */
+
+.contacts-page {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 65px 28px 90px;
+  color: #26384d;
+  background:
+    radial-gradient(circle at 5% 8%, #e3efff 0, transparent 28%),
+    radial-gradient(circle at 94% 35%, #e4f4e9 0, transparent 28%),
+    radial-gradient(circle at 50% 95%, #fff5dc 0, transparent 30%),
+    #f7fafd;
+}
+
+/* Main content */
+
+.contacts-page > .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1420px;
+  margin: 0 auto;
+}
+
+/* Heading card */
+
+.contacts-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  margin-bottom: 38px;
+  padding: 48px;
+  overflow: hidden;
+  border: 1px solid #dce8f4;
+  border-radius: 30px;
+  background: linear-gradient(
+    125deg,
+    #ffffff 0%,
+    #f0f6ff 65%,
+    #eff8f1 100%
+  );
+  box-shadow: 0 20px 55px rgba(84, 116, 151, 0.10);
+}
+
+.contacts-header::after {
+  content: "✧";
+  position: absolute;
+  top: 12px;
+  right: 245px;
+  color: #e6c36d;
+  font-size: 76px;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.contacts-header > div:first-child {
+  position: relative;
+  z-index: 1;
+}
+
+.contacts-header .section-label {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 9px 16px;
+  border: 1px solid #dce9f8;
+  border-radius: 30px;
+  background: #eaf3ff;
+  color: #5d7d9f;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.contacts-header h1 {
+  margin: 0 0 14px;
+  color: #26384d;
+  font-size: clamp(34px, 4.5vw, 54px);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.contacts-header p {
+  max-width: 570px;
+  margin: 0;
+  color: #718096;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* Total enquiries card */
+
+.contacts-count {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 0 0 230px;
+  min-height: 175px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  overflow: hidden;
+  border: 1px solid #dce9f5;
+  border-radius: 27px;
+  background: linear-gradient(145deg, #ffffff, #f2f7ff);
+  box-shadow: 0 15px 35px rgba(99, 133, 168, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contacts-count:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 40px rgba(99, 133, 168, 0.17);
+}
+
+.contacts-count strong {
+  color: #678caf;
+  font-size: 55px;
+  line-height: 1;
+}
+
+.contacts-count span {
+  color: #687e95;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contacts-count::after {
+  content: "✧";
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #e6c36d;
+  font-size: 26px;
+  animation: contacts-twinkle 3s ease-in-out infinite;
+}
+
+/* Loading, error and empty messages */
+
+.contacts-message {
+  position: relative;
+  z-index: 2;
+  padding: 45px 30px;
+  border: 1px solid #dfebf5;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 18px 45px rgba(84, 116, 151, 0.09);
+  color: #5e748b;
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.contacts-error {
+  border-color: #f3d3d3;
+  background: #fff5f5;
+  color: #b54747;
+}
+
+/* Enquiries table card */
+
+.contacts-table-wrapper {
+  position: relative;
+  z-index: 2;
+  overflow-x: auto;
+  padding: 12px;
+  border: 1px solid #e1eaf3;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 20px 55px rgba(84, 116, 151, 0.11);
+}
+
+.contacts-table {
+  width: 100%;
+  min-width: 1050px;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+}
+
+.contacts-table thead th {
+  padding: 23px 20px;
+  border-bottom: 1px solid #dfe9f2;
+  background: linear-gradient(120deg, #e7f1ff, #eaf5ed);
+  color: #496783;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.contacts-table thead th:first-child {
+  border-radius: 15px 0 0 0;
+}
+
+.contacts-table thead th:last-child {
+  border-radius: 0 15px 0 0;
+}
+
+.contacts-table tbody td {
+  padding: 23px 20px;
+  border-bottom: 1px solid #edf1f6;
+  color: #62748a;
+  font-size: 14px;
+  line-height: 1.8;
+  vertical-align: top;
+  transition: background-color 0.2s ease;
+}
+
+.contacts-table tbody tr:nth-child(even) {
+  background: #f8fbff;
+}
+
+.contacts-table tbody tr:hover {
+  background: #eef6ff;
+}
+
+.contacts-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.contacts-table tbody td:first-child {
+  color: #6488ad;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.contacts-table tbody td strong {
+  color: #30465e;
+  font-size: 14px;
+}
+
+.contacts-table tbody td:nth-child(3) {
+  color: #587fa7;
+  overflow-wrap: anywhere;
+}
+
+.contacts-table tbody td:nth-child(6) {
+  min-width: 220px;
+  max-width: 320px;
+}
+
+/* Highlighted enquiry messages */
+
+.contact-message-text {
+  display: block;
+  min-width: 190px;
+  padding: 13px 15px;
+  border: 1px solid #f1e7c5;
+  border-radius: 14px;
+  background: #fff9e9;
+  color: #756448;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.contacts-table tbody td:last-child {
+  min-width: 155px;
+  color: #78899b;
+  font-size: 12px;
+}
+
+/* Floating decorations */
+
+.contacts-floating-decor {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.contacts-floating-decor span {
+  position: absolute;
+  display: block;
+  user-select: none;
+  filter: drop-shadow(0 5px 8px rgba(110, 135, 160, 0.13));
+  animation: contacts-cute-float 4.5s ease-in-out infinite;
+}
+
+/* Golden star */
+
+.float-star {
+  top: 35px;
+  right: 7%;
+  color: #e6bf55;
+  font-size: 48px;
+  animation-delay: -1s;
+}
+
+/* Pink heart */
+
+.float-heart {
+  top: 170px;
+  right: 2%;
+  color: #ed9db5;
+  font-size: 43px;
+  animation-delay: -2s;
+}
+
+/* Green flower */
+
+.float-flower {
+  top: 310px;
+  left: 2%;
+  color: #83b59a;
+  font-size: 43px;
+  animation-delay: -0.7s;
+}
+
+/* Blue sparkle */
+
+.float-sparkle {
+  top: 440px;
+  right: 4%;
+  color: #9bb6e5;
+  font-size: 49px;
+  animation-delay: -3s;
+}
+
+/* Second heart */
+
+.float-heart-two {
+  top: 550px;
+  right: 12%;
+  color: #e7a0b8;
+  font-size: 33px;
+  animation-delay: -1.5s;
+}
+
+/* Second star */
+
+.float-star-two {
+  top: 650px;
+  left: 8%;
+  color: #e6c76e;
+  font-size: 38px;
+  animation-delay: -2.5s;
+}
+
+/* Floating animation */
+
+@keyframes contacts-cute-float {
+  0%, 100% {
+    transform: translateY(0) rotate(-8deg);
+  }
+
+  50% {
+    transform: translateY(-18px) rotate(10deg);
+  }
+}
+
+/* Sparkle animation */
+
+@keyframes contacts-twinkle {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(0.9) rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15) rotate(15deg);
+  }
+}
+
+/* Responsive design */
+
+@media (max-width: 760px) {
+  .contacts-page {
+    padding: 35px 15px 65px;
+  }
+
+  .contacts-header {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 25px;
+    padding: 28px 22px;
+    border-radius: 23px;
+  }
+
+  .contacts-header h1 {
+    font-size: 34px;
+    letter-spacing: -0.8px;
+  }
+
+  .contacts-header p {
+    font-size: 15px;
+  }
+
+  .contacts-header::after {
+    top: 100px;
+    right: 10px;
+    font-size: 42px;
+  }
+
+  .contacts-count {
+    flex: auto;
+    width: 100%;
+    min-height: 115px;
+  }
+
+  .contacts-count strong {
+    font-size: 40px;
+  }
+
+  .contacts-table-wrapper {
+    padding: 7px;
+    border-radius: 19px;
+  }
+
+  .contacts-table thead th,
+  .contacts-table tbody td {
+    padding: 16px 13px;
+  }
+
+  .float-star {
+    top: 20px;
+    right: 4%;
+    font-size: 29px;
+  }
+
+  .float-heart {
+    top: 230px;
+    right: 2%;
+    font-size: 29px;
+  }
+
+  .float-flower {
+    top: 350px;
+    left: 2%;
+    font-size: 29px;
+  }
+
+  .float-sparkle {
+    top: 470px;
+    right: 2%;
+    font-size: 32px;
+  }
+
+  .float-heart-two {
+    top: 560px;
+    right: 6%;
+    font-size: 25px;
+  }
+
+  .float-star-two {
+    top: 640px;
+    left: 4%;
+    font-size: 27px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .contacts-floating-decor span,
+  .contacts-count::after {
+    animation: none !important;
+  }
+
+  .contacts-count {
+    transition: none;
+  }
+}

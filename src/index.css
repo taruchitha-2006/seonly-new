@@ -1,23 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
+/* =========================================================
+   SEOONLY — GLOBAL COLOUR THEME
+   Warm white, soft pink, pale yellow and navy
+========================================================= */
+
 :root {
   font-family: 'Manrope', sans-serif;
-  color: #11111a;
-  background: #f8f8fb;
+  color: #24243A;
+  background: #FAF8F5;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
-  --bg: #f8f8fb;
-  --surface: #ffffff;
-  --surface-soft: #f2f1f7;
-  --text: #11111a;
-  --muted: #686876;
-  --border: #e4e3eb;
-  --purple: #6946d9;
-  --purple-dark: #5130b8;
-  --purple-soft: #eee9ff;
-  --black: #101015;
+  --bg: #FAF8F5;
+  --surface: #FFFFFF;
+  --surface-soft: #FBF1F5;
+
+  --text: #24243A;
+  --muted: #777585;
+  --border: #EEE7E5;
+
+  /* Retain existing variable names for compatibility */
+  --purple: #B66B8C;
+  --purple-dark: #94516F;
+  --purple-soft: #F8EAF0;
+
+  --pink: #D98CAD;
+  --pink-light: #F8EAF0;
+
+  --yellow: #E7C65C;
+  --yellow-soft: #FFF5D7;
+
+  --black: #24243A;
 }
 
 * {
@@ -30,6 +45,11 @@ html {
   scroll-behavior: smooth;
 }
 
+body,
+#root {
+  min-height: 100%;
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -40,7 +60,8 @@ body {
 body,
 button,
 input,
-textarea {
+textarea,
+select {
   font-family: 'Manrope', sans-serif;
 }
 
@@ -51,7 +72,8 @@ a {
 
 button,
 input,
-textarea {
+textarea,
+select {
   font: inherit;
 }
 
@@ -70,12 +92,16 @@ img {
 }
 
 .section-label {
-  color: var(--purple);
+  color: var(--purple-dark);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
+
+/* =========================================================
+   BUTTONS
+========================================================= */
 
 .primary-button {
   display: inline-flex;
@@ -103,7 +129,7 @@ img {
 .primary-button:hover {
   transform: translateY(-2px);
   background: var(--purple-dark);
-  box-shadow: 0 12px 28px rgba(105, 70, 217, 0.2);
+  box-shadow: 0 12px 28px rgba(182, 107, 140, 0.16);
 }
 
 /* =========================================================
@@ -149,7 +175,7 @@ img {
   right: 1px;
   top: 5px;
   border-radius: 50%;
-  background: var(--purple);
+  background: var(--yellow);
 }
 
 .brand-name {
@@ -178,7 +204,7 @@ img {
 }
 
 .nav-links a:hover {
-  color: var(--purple);
+  color: var(--purple-dark);
 }
 
 .nav-button {
@@ -200,7 +226,7 @@ img {
 }
 
 .nav-button:hover {
-  border-color: #cfc8ed;
+  border-color: #E7C6D4;
   transform: translateY(-1px);
 }
 
@@ -227,7 +253,7 @@ img {
 }
 
 .about-hero h1 span {
-  color: var(--purple);
+  color: var(--purple-dark);
 }
 
 .about-hero p {
@@ -301,7 +327,7 @@ img {
 }
 
 .about-stat-text strong {
-  color: var(--purple);
+  color: var(--purple-dark);
   font-size: 29px;
 }
 
@@ -341,7 +367,7 @@ img {
 }
 
 .principle-number {
-  color: var(--purple);
+  color: var(--purple-dark);
   font-size: 11px;
   font-weight: 800;
 }
@@ -365,9 +391,10 @@ img {
 
 .about-bottom {
   padding: 80px;
+  border: 1px solid #F0DCE5;
   border-radius: 28px;
-  background: var(--black);
-  color: #fff;
+  background: var(--purple-soft);
+  color: var(--text);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -383,7 +410,7 @@ img {
 }
 
 .about-bottom h2 span {
-  color: #9d84ff;
+  color: var(--purple-dark);
 }
 
 /* =========================================================
@@ -408,7 +435,7 @@ img {
 }
 
 .services-hero h1 span {
-  color: var(--purple);
+  color: var(--purple-dark);
 }
 
 .services-hero p {
@@ -441,7 +468,7 @@ img {
 }
 
 .service-page-number {
-  color: var(--purple);
+  color: var(--purple-dark);
   font-size: 11px;
   font-weight: 800;
   padding-top: 6px;
@@ -475,7 +502,7 @@ img {
 
 .service-page-point span {
   margin-right: 7px;
-  color: var(--purple);
+  color: var(--purple-dark);
   font-weight: 800;
 }
 
@@ -487,8 +514,9 @@ img {
 .ai-seo-section {
   margin-top: 120px;
   padding: 72px;
+  border: 1px solid #F0DCE5;
   border-radius: 28px;
-  background: #eeebf9;
+  background: var(--purple-soft);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 70px;
@@ -505,7 +533,7 @@ img {
 }
 
 .ai-seo-content h2 span {
-  color: var(--purple);
+  color: var(--purple-dark);
 }
 
 .ai-seo-content p {
@@ -529,10 +557,10 @@ img {
   width: 150px;
   height: 150px;
   transform: translate(-50%, -50%);
-  border: 1px solid #cfc8ed;
+  border: 1px solid #E7C6D4;
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0 20px 50px rgba(47, 35, 90, 0.12);
+  box-shadow: 0 20px 50px rgba(77, 45, 63, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -545,20 +573,20 @@ img {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--purple);
+  background: var(--pink);
 }
 
 .ai-search-node {
   position: absolute;
   z-index: 4;
   padding: 11px 16px;
-  border: 1px solid #d8d4e8;
+  border: 1px solid #E7DDE2;
   border-radius: 999px;
   background: #fff;
   color: #4d4d58;
   font-size: 11px;
   font-weight: 700;
-  box-shadow: 0 8px 25px rgba(35, 25, 70, 0.07);
+  box-shadow: 0 8px 25px rgba(35, 25, 70, 0.04);
 }
 
 .node-google {
@@ -585,7 +613,7 @@ img {
   position: absolute;
   left: 50%;
   top: 50%;
-  border: 1px dashed #cfc8ed;
+  border: 1px dashed #E2C6D3;
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
@@ -647,7 +675,7 @@ img {
 }
 
 .case-studies-hero h1 span {
-  color: var(--purple);
+  color: var(--purple-dark);
 }
 
 .case-studies-hero p {
@@ -679,7 +707,7 @@ img {
 
 .case-study-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 50px rgba(28, 23, 53, 0.08);
+  box-shadow: 0 20px 50px rgba(28, 23, 53, 0.06);
 }
 
 .case-study-top {
@@ -689,7 +717,7 @@ img {
 }
 
 .case-study-number {
-  color: var(--purple);
+  color: var(--purple-dark);
   font-size: 11px;
   font-weight: 800;
 }
@@ -710,7 +738,7 @@ img {
 .case-study-result strong {
   display: block;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  color: var(--purple);
+  color: var(--purple-dark);
   font-size: 62px;
   line-height: 1;
   letter-spacing: -0.07em;
@@ -739,16 +767,17 @@ img {
 
 .case-study-arrow {
   flex-shrink: 0;
-  color: var(--purple);
+  color: var(--purple-dark);
   font-size: 20px;
 }
 
 .performance-section {
   margin-top: 120px;
   padding: 72px;
+  border: 1px solid #F0DCE5;
   border-radius: 28px;
-  background: var(--black);
-  color: #fff;
+  background: var(--purple-soft);
+  color: var(--text);
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 70px;
@@ -764,22 +793,22 @@ img {
 }
 
 .performance-copy h2 span {
-  color: #9d84ff;
+  color: var(--purple-dark);
 }
 
 .performance-copy p {
   max-width: 500px;
   margin-top: 25px;
-  color: #a5a4af;
+  color: var(--muted);
   font-size: 14px;
   line-height: 1.8;
 }
 
 .performance-dashboard {
   padding: 28px;
-  border: 1px solid #2d2d37;
+  border: 1px solid var(--border);
   border-radius: 20px;
-  background: #17171e;
+  background: #fff;
 }
 
 .dashboard-header {
@@ -808,8 +837,8 @@ img {
 .dashboard-live {
   padding: 6px 9px;
   border-radius: 999px;
-  background: #272532;
-  color: #9d84ff;
+  background: var(--yellow-soft);
+  color: var(--purple-dark);
   font-size: 9px;
   font-weight: 800;
 }
@@ -836,7 +865,7 @@ img {
 
 .dashboard-main-stat em {
   margin-left: auto;
-  color: #9d84ff;
+  color: var(--purple-dark);
   font-size: 11px;
   font-style: normal;
   font-weight: 700;
@@ -853,7 +882,7 @@ img {
   position: absolute;
   left: 0;
   right: 0;
-  border-top: 1px solid #292832;
+  border-top: 1px solid #F0E9EC;
 }
 
 .line-one {
@@ -882,8 +911,8 @@ img {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: #9d84ff;
-  box-shadow: 0 0 0 5px rgba(157, 132, 255, 0.09);
+  background: var(--pink);
+  box-shadow: 0 0 0 5px rgba(217, 140, 173, 0.12);
 }
 
 .chart-path span:nth-child(1) {
@@ -976,7 +1005,7 @@ img {
 }
 
 .contact-hero h1 span {
-  color: var(--purple);
+  color: var(--purple-dark);
 }
 
 .contact-hero > p {
@@ -1035,7 +1064,7 @@ img {
 }
 
 .contact-benefit > span {
-  color: var(--purple);
+  color: var(--purple-dark);
   font-size: 10px;
   font-weight: 800;
   padding-top: 3px;
@@ -1057,7 +1086,7 @@ img {
   border: 1px solid var(--border);
   border-radius: 28px;
   background: #fff;
-  box-shadow: 0 18px 60px rgba(25, 20, 50, 0.05);
+  box-shadow: 0 18px 60px rgba(25, 20, 50, 0.04);
 }
 
 .contact-form-header {
@@ -1069,7 +1098,7 @@ img {
 }
 
 .contact-form-header span {
-  color: var(--purple);
+  color: var(--purple-dark);
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -1104,7 +1133,7 @@ img {
   border: 1px solid var(--border);
   border-radius: 12px;
   outline: none;
-  background: #fafafd;
+  background: #FCFAF9;
   color: var(--text);
   padding: 14px 15px;
   font-size: 13px;
@@ -1125,8 +1154,8 @@ img {
 
 .contact-field input:focus,
 .contact-field textarea:focus {
-  border-color: #a894e8;
-  box-shadow: 0 0 0 4px rgba(105, 70, 217, 0.08);
+  border-color: var(--pink);
+  box-shadow: 0 0 0 4px rgba(217, 140, 173, 0.12);
 }
 
 .contact-submit {
@@ -1169,10 +1198,10 @@ img {
 }
 
 .contact-email {
-  color: var(--purple);
+  color: var(--purple-dark);
   font-size: 14px;
   font-weight: 700;
-  border-bottom: 1px solid #cfc5f1;
+  border-bottom: 1px solid #E7C6D4;
   padding-bottom: 5px;
 }
 
@@ -1198,7 +1227,7 @@ img {
 }
 
 .process-hero h1 span {
-  color: var(--purple);
+  color: var(--purple-dark);
 }
 
 .process-hero p {
@@ -1262,7 +1291,7 @@ img {
 }
 
 .process-step-number {
-  color: var(--purple);
+  color: var(--purple-dark);
   font-size: 11px;
   font-weight: 800;
   padding-top: 6px;
@@ -1313,11 +1342,37 @@ img {
 }
 
 .process-bottom h2 span {
-  color: var(--purple);
+  color: var(--purple-dark);
 }
 
 /* =========================================================
-   RESPONSIVE
+   SHARED FORM AND ACCESSIBILITY STYLES
+========================================================= */
+
+input,
+textarea,
+select {
+  color: var(--text);
+  border-color: var(--border);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+}
+
+::selection {
+  background: var(--pink-light);
+  color: var(--text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -1382,6 +1437,10 @@ img {
     gap: 55px;
   }
 }
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
 
 @media (max-width: 600px) {
   .container {

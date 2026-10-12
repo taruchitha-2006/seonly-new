@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,29 +9,34 @@ function Navbar() {
     setMenuOpen(false);
   };
 
-  const handleAuditClick = () => {
+  const handleAuditClick = (event) => {
+    event.preventDefault();
     closeMenu();
 
-    setTimeout(() => {
-      document.getElementById('audit')?.scrollIntoView({
+    if (window.location.pathname !== '/') {
+      window.location.href = '/#audit';
+      return;
+    }
+
+    const auditSection = document.getElementById('audit');
+
+    if (auditSection) {
+      auditSection.scrollIntoView({
         behavior: 'smooth',
+        block: 'start',
       });
-    }, 100);
+    }
   };
 
   return (
     <header className="navbar">
       <div className="container navbar-inner">
-        <Link to="/" className="navbar-logo" onClick={closeMenu}>
-          SEOONLY
-        </Link>
+        <Logo onClick={closeMenu} />
 
         <div className="navbar-actions">
           <button
             type="button"
-            className={`navbar-menu-button ${
-              menuOpen ? 'active' : ''
-            }`}
+            className={`navbar-menu-button ${menuOpen ? 'active' : ''}`}
             onClick={() => setMenuOpen((current) => !current)}
             aria-expanded={menuOpen}
             aria-label="Toggle navigation menu"
@@ -71,29 +77,28 @@ function Navbar() {
             </div>
 
             <nav className="navbar-menu-links">
+              <Link to="/" onClick={closeMenu}>
+                Home <span>↗</span>
+              </Link>
+
               <Link to="/about" onClick={closeMenu}>
-                About
-                <span>↗</span>
+                About <span>↗</span>
               </Link>
 
               <Link to="/services" onClick={closeMenu}>
-                Services
-                <span>↗</span>
+                Services <span>↗</span>
               </Link>
 
               <Link to="/process" onClick={closeMenu}>
-                Process
-                <span>↗</span>
+                Process <span>↗</span>
               </Link>
 
               <Link to="/case-studies" onClick={closeMenu}>
-                Case Studies
-                <span>↗</span>
+                Case Studies <span>↗</span>
               </Link>
 
               <Link to="/contact" onClick={closeMenu}>
-                Contact
-                <span>↗</span>
+                Contact <span>↗</span>
               </Link>
             </nav>
           </div>

@@ -1,7 +1,7 @@
+
 import {
   ArrowUpRight,
   Bot,
-  Check,
   ChevronRight,
   FileText,
   Globe2,
@@ -10,8 +10,8 @@ import {
   Sparkles,
   Target,
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
+import { Link } from 'react-router-dom';
 import './AboutPage.css';
 
 function About() {
@@ -37,36 +37,12 @@ function About() {
   ];
 
   const capabilities = [
-    {
-      number: '01',
-      title: 'Technical SEO',
-      icon: Search,
-    },
-    {
-      number: '02',
-      title: 'Content Strategy',
-      icon: FileText,
-    },
-    {
-      number: '03',
-      title: 'AI Search',
-      icon: Bot,
-    },
-    {
-      number: '04',
-      title: 'Authority Building',
-      icon: Globe2,
-    },
-    {
-      number: '05',
-      title: 'Local Search',
-      icon: Target,
-    },
-    {
-      number: '06',
-      title: 'Search Analytics',
-      icon: LineChart,
-    },
+    { number: '01', title: 'Technical SEO', icon: Search },
+    { number: '02', title: 'Content Strategy', icon: FileText },
+    { number: '03', title: 'AI Search', icon: Bot },
+    { number: '04', title: 'Authority Building', icon: Globe2 },
+    { number: '05', title: 'Local Search', icon: Target },
+    { number: '06', title: 'Search Analytics', icon: LineChart },
   ];
 
   return (
@@ -79,7 +55,6 @@ function About() {
 
         <div className="container about-hero-grid">
           <div className="about-hero-copy">
-
             <div className="about-eyebrow">
               <span></span>
               ABOUT SEOONLY
@@ -109,12 +84,24 @@ function About() {
                 Explore Services
               </Link>
             </div>
-
           </div>
 
-          <div className="about-hero-art">
+          {/* SEARCH ILLUSTRATION */}
 
+          <div className="about-hero-art">
             <div className="about-art-glow"></div>
+
+            <div
+              className="about-hero-floating-decor"
+              aria-hidden="true"
+            >
+              <span className="hero-decor-heart">♡</span>
+              <span className="hero-decor-star">✦</span>
+              <span className="hero-decor-sparkle">✧</span>
+              <span className="hero-decor-flower">✿</span>
+              <span className="hero-decor-heart-two">♥</span>
+              <span className="hero-decor-star-two">✧</span>
+            </div>
 
             <div className="about-art-ring ring-one"></div>
             <div className="about-art-ring ring-two"></div>
@@ -126,7 +113,6 @@ function About() {
               </div>
 
               <span>SEOONLY</span>
-
               <strong>SEARCH</strong>
             </div>
 
@@ -158,77 +144,154 @@ function About() {
               <Sparkles size={13} />
               SEARCH IS CHANGING
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* STORY */}
+      {/* STORY: CONTENT CARD + CUTE BRAIN ILLUSTRATION */}
 
       <section className="about-story-section">
         <div className="container about-story-grid">
 
-          <div className="about-side-label">
-            <span>01</span>
-            THE SEOONLY STORY
-          </div>
+          {/* LEFT: STORY CONTENT */}
 
           <div className="about-story-content">
-
             <span className="about-small-label">
-              ONE SPECIALISATION
+              THE SEOONLY STORY
             </span>
 
             <h2>
-              Search has become too important to be
-              <em> just another service.</em>
+              Search that means
+              <em> more.</em>
             </h2>
 
-            <div className="about-story-columns">
-              <p>
-                SEO has evolved far beyond keywords and rankings.
-                Technical foundations, content, authority, local search
-                and AI-powered discovery now work together to determine
-                which businesses get found and trusted.
-              </p>
+            <p>
+              SEO has evolved beyond keywords and rankings.
+              Technical SEO, content, authority and AI discovery
+              work together to help businesses get found and trusted.
+            </p>
 
-              <p>
-                SEOOnly was built around a simple belief: businesses
-                deserve specialist search expertise focused on creating
-                measurable commercial value.
-              </p>
-            </div>
+            <p>
+              SEOOnly focuses on specialist search strategies
+              designed to create meaningful business growth.
+            </p>
 
             <div className="about-story-highlight">
-
-              <div className="about-highlight-number">
-                01
-              </div>
+              <div className="about-highlight-number">✦</div>
 
               <div>
-                <span>OUR FOCUS</span>
-
+                <span>OUR APPROACH</span>
                 <strong>
                   Find. Understand. Trust. Choose.
                 </strong>
               </div>
 
               <ArrowUpRight size={20} />
-
             </div>
-
           </div>
+
+          {/* RIGHT: ANIMATED THINKING BRAIN */}
+
+          <div className="about-story-image-wrap story-brain-art-wrap">
+            <div
+              className="about-story-illustration"
+              role="img"
+              aria-label="Cute thinking brain surrounded by search ideas and growth symbols"
+            >
+              {/* Soft background decorations */}
+
+              <div className="story-art-orb story-art-orb-one"></div>
+              <div className="story-art-orb story-art-orb-two"></div>
+
+              {/* Floating emojis */}
+
+              <span
+                className="story-floating-emoji story-lightbulb"
+                aria-hidden="true"
+              >
+                💡
+              </span>
+
+              <span
+                className="story-floating-emoji story-search-icon"
+                aria-hidden="true"
+              >
+                🔎
+              </span>
+
+              <span
+                className="story-floating-emoji story-sparkle-one"
+                aria-hidden="true"
+              >
+                ✨
+              </span>
+
+              <span
+                className="story-floating-emoji story-sparkle-two"
+                aria-hidden="true"
+              >
+                ✦
+              </span>
+
+              <span
+                className="story-floating-emoji story-flower"
+                aria-hidden="true"
+              >
+                🌸
+              </span>
+
+              <span
+                className="story-floating-emoji story-little-heart"
+                aria-hidden="true"
+              >
+                ♡
+              </span>
+
+              {/* Thought bubble */}
+
+              <div className="story-thought-bubble">
+                <span>💭</span>
+                <small>New ideas!</small>
+              </div>
+
+              {/* Brain character */}
+
+              <div className="story-brain-character">
+                <span className="story-brain-emoji">🧠</span>
+                <span className="story-thinking-face">🤔</span>
+              </div>
+
+              {/* Mini idea card */}
+
+              <div className="story-idea-card">
+                <span className="story-idea-icon">📈</span>
+
+                <div>
+                  <strong>Smart thinking</strong>
+                  <small>Ideas into growth</small>
+                </div>
+
+                <span className="story-idea-star">✧</span>
+              </div>
+
+              {/* Bottom label */}
+
+              <div className="story-art-footer">
+                <span>✦</span>
+                THINK · DISCOVER · GROW
+                <span>♡</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
       {/* SEARCH LANDSCAPE */}
 
       <section className="about-landscape-section">
-
         <div className="container">
-
           <div className="about-landscape-heading">
-
             <div>
               <span className="about-section-label light">
                 THE SEARCH LANDSCAPE
@@ -246,11 +309,9 @@ function About() {
               AI assistants, explore recommendations and expect answers
               instead of lists of links.
             </p>
-
           </div>
 
           <div className="about-landscape-visual">
-
             <div className="landscape-line line-one"></div>
             <div className="landscape-line line-two"></div>
 
@@ -283,21 +344,15 @@ function About() {
                 <small>Direct answers</small>
               </div>
             </div>
-
           </div>
-
         </div>
-
       </section>
 
       {/* WHY SEOONLY */}
 
       <section className="about-principles-section">
-
         <div className="container">
-
           <div className="about-principles-heading">
-
             <div>
               <span className="about-section-label">
                 WHY SEOONLY
@@ -315,11 +370,9 @@ function About() {
               technical performance, content, authority and AI discovery
               around one commercial objective.
             </p>
-
           </div>
 
           <div className="about-principles-grid">
-
             {principles.map((principle) => {
               const Icon = principle.icon;
 
@@ -328,10 +381,8 @@ function About() {
                   className="about-principle-card"
                   key={principle.number}
                 >
-
                   <div className="about-principle-top">
                     <span>{principle.number}</span>
-
                     <div>
                       <Icon size={18} />
                     </div>
@@ -339,7 +390,6 @@ function About() {
 
                   <div className="about-principle-body">
                     <h3>{principle.title}</h3>
-
                     <p>{principle.text}</p>
                   </div>
 
@@ -347,25 +397,18 @@ function About() {
                     size={18}
                     className="about-principle-arrow"
                   />
-
                 </article>
               );
             })}
-
           </div>
-
         </div>
-
       </section>
 
       {/* CAPABILITIES */}
 
       <section className="about-capabilities-section">
-
         <div className="container">
-
           <div className="about-capabilities-heading">
-
             <span className="about-section-label">
               WHAT WE SPECIALISE IN
             </span>
@@ -375,11 +418,9 @@ function About() {
               <br />
               the modern <em>search stack.</em>
             </h2>
-
           </div>
 
           <div className="about-capabilities-list">
-
             {capabilities.map((capability) => {
               const Icon = capability.icon;
 
@@ -388,35 +429,24 @@ function About() {
                   className="about-capability"
                   key={capability.number}
                 >
-
                   <span>{capability.number}</span>
-
                   <Icon size={18} />
-
                   <strong>{capability.title}</strong>
-
                   <ArrowUpRight size={16} />
-
                 </div>
               );
             })}
-
           </div>
-
         </div>
-
       </section>
 
-      {/* MISSION */}
+      {/* MISSION AND VISION */}
 
       <section className="about-mission-section">
-
         <div className="container">
-
           <div className="about-mission-intro">
-
             <span className="about-section-label">
-              MISSION & VISION
+              MISSION &amp; VISION
             </span>
 
             <h2>
@@ -424,13 +454,10 @@ function About() {
               <br />
               that creates <em>real growth.</em>
             </h2>
-
           </div>
 
           <div className="about-mission-grid">
-
             <article className="about-mission-card mission-card">
-
               <span>OUR MISSION</span>
 
               <h3>
@@ -446,11 +473,9 @@ function About() {
               <div className="mission-icon">
                 <Target size={21} />
               </div>
-
             </article>
 
             <article className="about-mission-card vision-card">
-
               <span>OUR VISION</span>
 
               <h3>
@@ -466,31 +491,21 @@ function About() {
               <div className="mission-icon">
                 <Globe2 size={21} />
               </div>
-
             </article>
-
           </div>
-
         </div>
-
       </section>
 
-      {/* CTA */}
+      {/* FINAL CALL TO ACTION */}
 
       <section className="about-final-section">
-
         <div className="container">
-
           <div className="about-final-card">
-
             <div className="about-final-orbit"></div>
             <div className="about-final-orbit orbit-small"></div>
 
             <div className="about-final-copy">
-
-              <span>
-                READY TO BE FOUND?
-              </span>
+              <span>READY TO BE FOUND?</span>
 
               <h2>
                 Build a search presence
@@ -502,7 +517,6 @@ function About() {
                 Bring your business, your goals and your search
                 challenges. We'll bring the strategy.
               </p>
-
             </div>
 
             <Link
@@ -512,11 +526,8 @@ function About() {
               Start a Conversation
               <ArrowUpRight size={17} />
             </Link>
-
           </div>
-
         </div>
-
       </section>
 
     </div>
