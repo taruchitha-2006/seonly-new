@@ -1,8 +1,8 @@
 
 /* =========================================================
    SEOONLY HOME PAGE
-   Neutral cream • Bold navy text • Pink & yellow accents
-   Search discovery artwork • Colourful lower sections
+   Neutral backgrounds • Black & blue heading
+   Pastel accents • Search discovery artwork • Animations
 ========================================================= */
 
 :root {
@@ -15,6 +15,7 @@
   --home-lavender: #ded4f7;
   --home-mint: #d0eadb;
   --home-blue: #d8e7f9;
+  --home-brand-blue: #2563eb;
 }
 
 .container {
@@ -61,7 +62,7 @@
 }
 
 /* =========================================================
-   HERO — NEUTRAL BACKGROUND, BOLD TEXT
+   HERO
 ========================================================= */
 
 .new-hero {
@@ -124,9 +125,11 @@
   animation: home-kicker-pulse 2.3s ease-in-out infinite;
 }
 
+/* Main heading: black */
+
 .new-hero-copy h1 {
   margin: 28px 0 0;
-  color: #202b3e;
+  color: #171717;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(51px, 5.9vw, 78px);
   font-weight: 800;
@@ -134,12 +137,16 @@
   line-height: 1.04;
 }
 
+/* Highlighted words: blue */
+
 .new-hero-copy h1 em {
   position: relative;
   display: inline-block;
-  color: #24334b;
+  color: #2563eb;
   font-style: normal;
 }
+
+/* Light-blue animated underline */
 
 .new-hero-copy h1 em::after {
   position: absolute;
@@ -148,7 +155,7 @@
   left: 0;
   height: 7px;
   border-radius: 99px;
-  background: #f0c0d4;
+  background: #bfdbfe;
   content: '';
   transform: scaleX(0);
   transform-origin: left;
@@ -196,9 +203,9 @@
 .new-primary-button:hover,
 .collaboration-button:hover {
   transform: translateY(-3px);
-  border-color: #a9577c;
-  background: #a9577c;
-  box-shadow: 0 13px 28px #a9577c29;
+  border-color: #2563eb;
+  background: #2563eb;
+  box-shadow: 0 13px 28px #2563eb29;
 }
 
 .new-primary-button svg,
@@ -226,7 +233,7 @@
 }
 
 .new-secondary-button:hover {
-  color: #a9577c !important;
+  color: #2563eb !important;
 }
 
 .new-proof-row {
@@ -263,7 +270,7 @@
 }
 
 /* =========================================================
-   HERO ART — SEARCH CARDS, NOT A ROBOT OR GRAPH
+   HERO ART — SEARCH DISCOVERY
 ========================================================= */
 
 .new-hero-stage.home-discovery-art {
@@ -316,7 +323,7 @@
   transform: rotate(43deg);
 }
 
-/* Central search window */
+/* Main search window */
 
 .home-discovery-window {
   position: relative;
@@ -373,7 +380,7 @@
 }
 
 .home-window-topbar > svg {
-  color: #bb7294;
+  color: #2563eb;
 }
 
 .home-window-content {
@@ -381,7 +388,7 @@
 }
 
 .home-window-kicker {
-  color: #a35d7f;
+  color: #2563eb;
   font-size: 8px;
   font-weight: 900;
   letter-spacing: 1.35px;
@@ -413,7 +420,7 @@
 
 .home-search-bar > svg {
   flex: 0 0 auto;
-  color: #9d7291;
+  color: #2563eb;
 }
 
 .home-search-bar > span {
@@ -427,7 +434,7 @@
   flex: 0 0 auto;
   place-items: center;
   border-radius: 8px;
-  background: #29364c;
+  background: #2563eb;
   color: #fff;
 }
 
@@ -450,8 +457,8 @@
   flex: 0 0 auto;
   place-items: center;
   border-radius: 12px;
-  background: #e8f4ec;
-  color: #3e8463;
+  background: #e8f0ff;
+  color: #2563eb;
 }
 
 .home-result-copy {
@@ -580,7 +587,7 @@
 
 .keyword-float > svg {
   align-self: flex-start;
-  color: #bf7898;
+  color: #2563eb;
 }
 
 .ai-float {
@@ -786,7 +793,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #a25277;
+  color: #2563eb;
   font-size: 10px;
   font-weight: 900;
   letter-spacing: 1.5px;
@@ -824,7 +831,7 @@
 }
 
 /* =========================================================
-   SEARCH ECOSYSTEM — COLOURFUL CARDS
+   SEARCH ECOSYSTEM
 ========================================================= */
 
 .ecosystem-section {
@@ -1074,8 +1081,8 @@
 }
 
 .visibility-metric:nth-child(1) {
-  border-color: #f1dce6;
-  background: #fff3f7;
+  border-color: #d5e2fa;
+  background: #f1f6ff;
 }
 
 .visibility-metric:nth-child(2) {
@@ -1119,7 +1126,7 @@
   overflow: hidden;
   border: 1px solid #ece5e9;
   border-radius: 20px;
-  background: linear-gradient(180deg, #fff, #fffafc);
+  background: linear-gradient(180deg, #fff, #f7f9ff);
 }
 
 .big-chart-heading {
@@ -1151,7 +1158,7 @@
 }
 
 .big-chart-heading > svg {
-  color: #ae7293;
+  color: #2563eb;
 }
 
 .big-chart-grid {
@@ -1200,7 +1207,7 @@
 }
 
 /* =========================================================
-   FUTURE OF SEARCH — DARK CONTRAST
+   FUTURE OF SEARCH
 ========================================================= */
 
 .future-section {
@@ -1212,7 +1219,7 @@
 }
 
 .new-section-label.light {
-  color: #f4c5d9;
+  color: #bfdbfe;
 }
 
 .future-heading {
@@ -1262,8 +1269,8 @@
 }
 
 .future-panel.featured {
-  border-color: #dca9c5;
-  background: linear-gradient(140deg, #483b54, #3b374f);
+  border-color: #9dbaf6;
+  background: linear-gradient(140deg, #343f5a, #3b374f);
 }
 
 .future-panel-number {
@@ -1283,7 +1290,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  color: #f1bfd5;
+  color: #bfdbfe;
 }
 
 .future-panel-top > span {
@@ -1323,7 +1330,7 @@
 }
 
 .future-panel.featured .future-list svg {
-  color: #f1bed5;
+  color: #bfdbfe;
 }
 
 .future-bottom {
@@ -1339,11 +1346,11 @@
 }
 
 .future-bottom > svg {
-  color: #f2c6da;
+  color: #bfdbfe;
 }
 
 .future-bottom > span {
-  color: #f2c6da;
+  color: #bfdbfe;
   font-size: 10px;
   font-weight: 900;
   letter-spacing: 1px;
@@ -1356,7 +1363,7 @@
 }
 
 /* =========================================================
-   INDUSTRIES — COLOURFUL LOWER CONTENT
+   INDUSTRIES
 ========================================================= */
 
 .industries-section {
@@ -1628,7 +1635,7 @@
 }
 
 .collaboration-copy h2 span {
-  color: #b45e84;
+  color: #2563eb;
 }
 
 .collaboration-copy > p {
@@ -1694,7 +1701,7 @@
 }
 
 .ai-preview-layout > div:first-child h2 span {
-  color: #a55e82;
+  color: #2563eb;
 }
 
 .ai-preview-layout > div:first-child > p {
@@ -1721,7 +1728,7 @@
 }
 
 .ai-preview-points svg {
-  color: #a45e83;
+  color: #2563eb;
 }
 
 .ai-answer-window {
@@ -1785,7 +1792,7 @@
 }
 
 .ai-question svg {
-  color: #a36e8b;
+  color: #2563eb;
 }
 
 .ai-answer-result {
@@ -1794,9 +1801,9 @@
   gap: 12px;
   margin-top: 19px;
   padding: 15px;
-  border: 1px solid #f0e1e7;
+  border: 1px solid #dce7fc;
   border-radius: 14px;
-  background: linear-gradient(110deg, #fff3f7, #fff9e9);
+  background: linear-gradient(110deg, #f0f5ff, #fff9e9);
 }
 
 .ai-result-avatar {
@@ -1806,7 +1813,7 @@
   place-items: center;
   border-radius: 12px;
   background: #fff;
-  color: #b36b8e;
+  color: #2563eb;
   box-shadow: 0 4px 12px #5542600b;
   font-size: 19px;
 }
@@ -1825,7 +1832,7 @@
 }
 
 .ai-answer-result b {
-  color: #984b70;
+  color: #2563eb;
 }
 
 .ai-source-row {
@@ -1892,7 +1899,7 @@
   bottom: -220px;
   width: 430px;
   height: 430px;
-  border-color: #f5c9dd34;
+  border-color: #bfdbfe34;
 }
 
 .final-new-card > div {
@@ -1930,7 +1937,7 @@
 
 .final-new-button:hover {
   transform: translateY(-4px);
-  background: #fff0f6;
+  background: #eff6ff;
 }
 
 /* =========================================================
@@ -2177,7 +2184,7 @@
   }
 
   .home-discovery-window {
-    width: min(100% - 8px, 360px);
+    width: min(calc(100% - 8px), 360px);
     border-radius: 18px;
   }
 
