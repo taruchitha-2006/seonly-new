@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import {
   ArrowUpRight,
@@ -8,6 +9,7 @@ import {
   Code2,
   Globe2,
   GraduationCap,
+  Heart,
   HeartPulse,
   MapPin,
   Search,
@@ -16,6 +18,7 @@ import {
   Target,
   TrendingUp,
   ShieldCheck,
+  CheckCircle2,
 } from 'lucide-react';
 
 import Navbar from './components/Navbar';
@@ -30,6 +33,7 @@ import Contact from './pages/Contact';
 import Audits from './pages/Audits';
 import Contacts from './pages/Contacts';
 
+import './App.css';
 import './HomePage.css';
 
 function Home() {
@@ -80,16 +84,15 @@ function Home() {
 
   return (
     <>
-      {/* =====================================================
-          HERO
-      ===================================================== */}
+      {/* HERO */}
+
       <section className="new-hero">
-        <div className="new-hero-noise"></div>
+        <div className="new-hero-noise" />
 
         <div className="container new-hero-grid">
           <div className="new-hero-copy">
             <div className="new-kicker">
-              <span></span>
+              <span />
               SEARCH VISIBILITY BUILT AROUND GROWTH
             </div>
 
@@ -115,6 +118,7 @@ function Home() {
 
               <Link to="/services" className="new-secondary-button">
                 Explore services
+                <ArrowUpRight size={16} />
               </Link>
             </div>
 
@@ -124,14 +128,14 @@ function Home() {
                 <span>Visibility</span>
               </div>
 
-              <i></i>
+              <i />
 
               <div>
                 <strong>64K</strong>
                 <span>Organic traffic</span>
               </div>
 
-              <i></i>
+              <i />
 
               <div>
                 <strong>2.8K</strong>
@@ -140,135 +144,159 @@ function Home() {
             </div>
           </div>
 
-          <div className="new-hero-stage">
-            <div className="stage-ambient"></div>
-            <div className="stage-grid"></div>
+          {/* SEARCH-DISCOVERY HERO — NO ROBOT OR LARGE GRAPH */}
 
-            <div className="stage-orbit orbit-outer"></div>
-            <div className="stage-orbit orbit-inner"></div>
+          <div
+            className="new-hero-stage home-discovery-art"
+            role="img"
+            aria-label="Layered search results and AI discovery cards with pastel decorative details"
+          >
+            <div className="home-discovery-glow" />
+            <div className="home-discovery-orbit orbit-a" />
+            <div className="home-discovery-orbit orbit-b" />
 
-            <div className="stage-dashboard">
-              <div className="stage-dashboard-header">
+            {/* Small floating decorations */}
+
+            <span className="home-deco-heart heart-a">♡</span>
+            <span className="home-deco-heart heart-b">♥</span>
+            <span className="home-deco-heart heart-c">♡</span>
+            <span className="home-deco-spark spark-a">✦</span>
+            <span className="home-deco-spark spark-b">✧</span>
+            <span className="home-deco-spark spark-c">✦</span>
+
+            {/* Main search interface */}
+
+            <div className="home-discovery-window">
+              <div className="home-window-topbar">
+                <div className="home-window-dots">
+                  <span />
+                  <span />
+                  <span />
+                </div>
+
+                <span className="home-window-title">
+                  SEOONLY / SEARCH STUDIO
+                </span>
+
+                <Sparkles size={16} />
+              </div>
+
+              <div className="home-window-content">
+                <div className="home-window-kicker">
+                  YOUR NEXT DISCOVERY STARTS HERE
+                </div>
+
+                <h2>
+                  The right brand.
+                  <br />
+                  The right moment.
+                </h2>
+
+                <div className="home-search-bar">
+                  <Search size={18} />
+                  <span>Find the right solution...</span>
+                  <div>
+                    <ArrowUpRight size={16} />
+                  </div>
+                </div>
+
+                <div className="home-search-result">
+                  <div className="home-result-symbol">
+                    <Globe2 size={21} />
+                  </div>
+
+                  <div className="home-result-copy">
+                    <span>SEARCH RESULT / 01</span>
+                    <strong>SEOOnly</strong>
+                    <p>Helping the right customers find your brand.</p>
+                  </div>
+
+                  <CheckCircle2
+                    size={19}
+                    className="home-result-check"
+                  />
+                </div>
+
+                <div className="home-result-bottom">
+                  <span className="home-result-tag tag-pink">
+                    Search ready
+                  </span>
+
+                  <span className="home-result-tag tag-yellow">
+                    Brand authority
+                  </span>
+
+                  <span className="home-result-tag tag-green">
+                    AI discovery
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating keyword card */}
+
+            <div className="home-discovery-float keyword-float">
+              <div className="home-float-icon float-icon-pink">
+                <Search size={18} />
+              </div>
+
+              <div>
+                <strong>Keyword discovery</strong>
+                <span>Find new opportunities</span>
+              </div>
+
+              <Sparkles size={16} />
+            </div>
+
+            {/* AI answer panel */}
+
+            <div className="home-discovery-float ai-float">
+              <div className="home-ai-float-header">
+                <div className="home-float-icon float-icon-purple">
+                  <Bot size={19} />
+                </div>
+
                 <div>
-                  <span>LIVE VISIBILITY</span>
-                  <strong>87%</strong>
+                  <strong>AI discovery</strong>
+                  <span>Where answers begin</span>
                 </div>
 
-                <div className="stage-live">
-                  <span></span>
-                  LIVE
-                </div>
+                <span className="home-ai-status">READY</span>
               </div>
 
-              <div className="stage-chart">
-                <div className="chart-grid-line one"></div>
-                <div className="chart-grid-line two"></div>
-                <div className="chart-grid-line three"></div>
-
-                <svg viewBox="0 0 500 190" preserveAspectRatio="none">
-                  <defs>
-                    <linearGradient
-                      id="heroChartFill"
-                      x1="0"
-                      y1="0"
-                      x2="0"
-                      y2="1"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#765cff"
-                        stopOpacity="0.30"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#765cff"
-                        stopOpacity="0"
-                      />
-                    </linearGradient>
-                  </defs>
-
-                  <path
-                    d="M0 157 C45 150 65 145 100 152 C136 160 150 131 190 136 C225 140 240 101 278 109 C319 118 335 80 370 90 C408 99 429 48 470 60 C484 64 492 42 500 38 L500 190 L0 190 Z"
-                    fill="url(#heroChartFill)"
-                  />
-
-                  <path
-                    d="M0 157 C45 150 65 145 100 152 C136 160 150 131 190 136 C225 140 240 101 278 109 C319 118 335 80 370 90 C408 99 429 48 470 60 C484 64 492 42 500 38"
-                    fill="none"
-                    stroke="#715cff"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-
-              <div className="stage-dashboard-footer">
-                <span>Last 12 months</span>
-                <strong>
-                  <TrendingUp size={13} />
-                  +24.8%
-                </strong>
+              <div className="home-ai-platform-list">
+                <span>Google</span>
+                <span>ChatGPT</span>
+                <span>Gemini</span>
+                <span>Perplexity</span>
               </div>
             </div>
 
-            <div className="stage-platform google">
-              <div className="platform-icon blue">G</div>
+            {/* Floating opportunity bubble */}
+
+            <div className="home-opportunity-bubble">
+              <div className="home-opportunity-icon">
+                <Target size={20} />
+              </div>
+
               <div>
-                <strong>Google</strong>
-                <span>Search ranking</span>
+                <strong>Be discoverable.</strong>
+                <span>Make every search count.</span>
               </div>
-              <b>+24.8%</b>
+
+              <Heart size={17} className="home-opportunity-heart" />
             </div>
 
-            <div className="stage-platform chatgpt">
-              <div className="platform-icon green">✦</div>
-              <div>
-                <strong>ChatGPT</strong>
-                <span>AI mentions</span>
-              </div>
-              <b>+42.6%</b>
+            <div className="home-discovery-caption">
+              <span />
+              Make your brand easier to find
             </div>
-
-            <div className="stage-platform gemini">
-              <div className="platform-icon purple">✧</div>
-              <div>
-                <strong>Gemini</strong>
-                <span>Brand discovery</span>
-              </div>
-              <small>ACTIVE</small>
-            </div>
-
-            <div className="stage-platform perplexity">
-              <div className="platform-icon cyan">P</div>
-              <div>
-                <strong>Perplexity</strong>
-                <span>Answer visibility</span>
-              </div>
-              <small>ACTIVE</small>
-            </div>
-
-            <div className="stage-mini top">
-              <span>TOP POSITION</span>
-              <strong>#1</strong>
-              <small>High-intent keywords</small>
-            </div>
-
-            <div className="stage-mini bottom">
-              <span>AI MENTIONS</span>
-              <strong>2.8K</strong>
-              <small>+42.6% growth</small>
-            </div>
-
-            <div className="stage-spark spark-one">✦</div>
-            <div className="stage-spark spark-two">✧</div>
-            <div className="stage-spark spark-three">✦</div>
           </div>
         </div>
       </section>
 
-      {/* =====================================================
-          SEARCH ECOSYSTEM
-      ===================================================== */}
+      {/* SEARCH ECOSYSTEM */}
+
       <section className="ecosystem-section">
         <div className="container">
           <div className="section-intro split">
@@ -295,86 +323,69 @@ function Home() {
           <div className="ecosystem-cards">
             <article className="ecosystem-card ecosystem-google">
               <div className="ecosystem-card-top">
-                <div className="ecosystem-card-icon blue">
-                  G
-                </div>
+                <div className="ecosystem-card-icon blue">G</div>
                 <ArrowUpRight size={18} />
               </div>
 
               <div>
                 <span>01</span>
                 <h3>Google</h3>
-                <p>
-                  Own the moments when customers actively search.
-                </p>
+                <p>Own the moments when customers actively search.</p>
               </div>
 
-              <div className="ecosystem-card-line"></div>
+              <div className="ecosystem-card-line" />
             </article>
 
             <article className="ecosystem-card ecosystem-chatgpt">
               <div className="ecosystem-card-top">
-                <div className="ecosystem-card-icon green">
-                  ✦
-                </div>
+                <div className="ecosystem-card-icon green">✦</div>
                 <ArrowUpRight size={18} />
               </div>
 
               <div>
                 <span>02</span>
                 <h3>ChatGPT</h3>
-                <p>
-                  Become part of answers people trust and act on.
-                </p>
+                <p>Become part of answers people trust and act on.</p>
               </div>
 
-              <div className="ecosystem-card-line"></div>
+              <div className="ecosystem-card-line" />
             </article>
 
             <article className="ecosystem-card ecosystem-gemini">
               <div className="ecosystem-card-top">
-                <div className="ecosystem-card-icon purple">
-                  ✧
-                </div>
+                <div className="ecosystem-card-icon purple">✧</div>
                 <ArrowUpRight size={18} />
               </div>
 
               <div>
                 <span>03</span>
                 <h3>Gemini</h3>
-                <p>
-                  Build signals that help AI understand your brand.
-                </p>
+                <p>Build signals that help AI understand your brand.</p>
               </div>
 
-              <div className="ecosystem-card-line"></div>
+              <div className="ecosystem-card-line" />
             </article>
 
             <article className="ecosystem-card ecosystem-perplexity">
               <div className="ecosystem-card-top">
-                <div className="ecosystem-card-icon cyan">
-                  P
-                </div>
+                <div className="ecosystem-card-icon cyan">P</div>
                 <ArrowUpRight size={18} />
               </div>
 
               <div>
                 <span>04</span>
                 <h3>Perplexity</h3>
-                <p>
-                  Show up when customers ask for recommendations.
-                </p>
+                <p>Show up when customers ask for recommendations.</p>
               </div>
 
-              <div className="ecosystem-card-line"></div>
+              <div className="ecosystem-card-line" />
             </article>
           </div>
         </div>
       </section>
 
-      {/* =====================================================
-          VISIBILITY DASHBOARD
-      ===================================================== */}
+      {/* VISIBILITY DASHBOARD */}
+
       <section className="visibility-section">
         <div className="container">
           <div className="section-intro split">
@@ -405,7 +416,7 @@ function Home() {
               </div>
 
               <div className="visibility-status">
-                <span></span>
+                <span />
                 LIVE
               </div>
             </div>
@@ -441,10 +452,10 @@ function Home() {
               </div>
 
               <div className="big-chart-grid">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span />
+                <span />
+                <span />
+                <span />
               </div>
 
               <svg
@@ -462,12 +473,13 @@ function Home() {
                   >
                     <stop
                       offset="0%"
-                      stopColor="#6757f5"
-                      stopOpacity="0.20"
+                      stopColor="#d98cad"
+                      stopOpacity="0.25"
                     />
+
                     <stop
                       offset="100%"
-                      stopColor="#6757f5"
+                      stopColor="#d98cad"
                       stopOpacity="0"
                     />
                   </linearGradient>
@@ -481,7 +493,7 @@ function Home() {
                 <path
                   d="M0 224 C75 211 92 221 148 212 C203 204 235 220 290 190 C351 158 379 188 428 166 C486 140 505 148 553 123 C609 94 632 119 684 96 C740 74 763 92 814 62 C861 34 920 50 1000 18"
                   fill="none"
-                  stroke="#6757f5"
+                  stroke="#bd6c96"
                   strokeWidth="4"
                   strokeLinecap="round"
                 />
@@ -500,9 +512,8 @@ function Home() {
         </div>
       </section>
 
-      {/* =====================================================
-          FUTURE OF SEARCH
-      ===================================================== */}
+      {/* FUTURE OF SEARCH */}
+
       <section className="future-section">
         <div className="container">
           <div className="future-heading">
@@ -535,22 +546,10 @@ function Home() {
               <h3>Win the search results.</h3>
 
               <div className="future-list">
-                <div>
-                  <Check size={15} />
-                  Google rankings
-                </div>
-                <div>
-                  <Check size={15} />
-                  Keyword optimisation
-                </div>
-                <div>
-                  <Check size={15} />
-                  Organic traffic
-                </div>
-                <div>
-                  <Check size={15} />
-                  Technical SEO
-                </div>
+                <div><Check size={15} />Google rankings</div>
+                <div><Check size={15} />Keyword optimisation</div>
+                <div><Check size={15} />Organic traffic</div>
+                <div><Check size={15} />Technical SEO</div>
               </div>
             </article>
 
@@ -565,42 +564,24 @@ function Home() {
               <h3>Become the answer.</h3>
 
               <div className="future-list">
-                <div>
-                  <Check size={15} />
-                  AI recommendations
-                </div>
-                <div>
-                  <Check size={15} />
-                  Brand mentions
-                </div>
-                <div>
-                  <Check size={15} />
-                  Answer engine visibility
-                </div>
-                <div>
-                  <Check size={15} />
-                  Authority & trust
-                </div>
+                <div><Check size={15} />AI recommendations</div>
+                <div><Check size={15} />Brand mentions</div>
+                <div><Check size={15} />Answer engine visibility</div>
+                <div><Check size={15} />Authority &amp; trust</div>
               </div>
             </article>
           </div>
 
           <div className="future-bottom">
             <Sparkles size={17} />
-            <span>
-              SEO + AI SEARCH
-            </span>
-
-            <p>
-              The brands that win tomorrow's search are preparing today.
-            </p>
+            <span>SEO + AI SEARCH</span>
+            <p>The brands that win tomorrow's search are preparing today.</p>
           </div>
         </div>
       </section>
 
-      {/* =====================================================
-          INDUSTRIES
-      ===================================================== */}
+      {/* INDUSTRIES */}
+
       <section className="industries-section">
         <div className="container">
           <div className="section-intro">
@@ -639,7 +620,6 @@ function Home() {
                   </div>
 
                   <h3>{industry.title}</h3>
-
                   <p>{industry.text}</p>
 
                   <div className="industry-tags">
@@ -648,211 +628,83 @@ function Home() {
                     ))}
                   </div>
 
-                  <ArrowUpRight
-                    className="industry-arrow"
-                    size={18}
-                  />
+                  <ArrowUpRight className="industry-arrow" size={18} />
                 </article>
               );
             })}
           </div>
         </div>
       </section>
-      
-{/* =====================================================
-    CLIENT COLLABORATION — PROFESSIONAL PHOTO SECTION
-===================================================== */}
-<section className="collaboration-section">
-  <div className="container collaboration-grid">
-    <div className="collaboration-image-wrap">
-      <img
-        src="/client-collaboration.png"
-        alt="Professionals collaborating on a laptop during a business meeting"
-        className="collaboration-image"
-      />
 
-      <div className="collaboration-note">
-        <span className="collaboration-note-dot"></span>
-        <div>
-          <strong>Strategy built together</strong>
-          <span>Clear insights. Practical next steps.</span>
+      {/* CLIENT COLLABORATION */}
+
+      <section className="collaboration-section">
+        <div className="container collaboration-grid">
+          <div className="collaboration-image-wrap">
+            <img
+              src="/client-collaboration.png"
+              alt="Professionals collaborating on a laptop during a business meeting"
+              className="collaboration-image"
+            />
+
+            <div className="collaboration-note">
+              <span className="collaboration-note-dot" />
+
+              <div>
+                <strong>Strategy built together</strong>
+                <span>Clear insights. Practical next steps.</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="collaboration-copy">
+            <span className="new-section-label">
+              PARTNERSHIP THAT MOVES YOU FORWARD
+            </span>
+
+            <h2>
+              Great results start with
+              <span> working together.</span>
+            </h2>
+
+            <p>
+              We work alongside your team to understand your business,
+              strengthen your search visibility, and turn insights into
+              practical actions that support sustainable growth.
+            </p>
+
+            <div className="collaboration-points">
+              <div>
+                <Check size={17} />
+                Clear priorities and practical recommendations
+              </div>
+
+              <div>
+                <Check size={17} />
+                Reporting that makes progress understandable
+              </div>
+
+              <div>
+                <Check size={17} />
+                A strategy tailored to your business
+              </div>
+            </div>
+
+            <Link to="/contact" className="collaboration-button">
+              Talk to our team
+              <ArrowUpRight size={17} />
+            </Link>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <div className="collaboration-copy">
-      <span className="new-section-label">
-        PARTNERSHIP THAT MOVES YOU FORWARD
-      </span>
+      {/* AI ANSWER PREVIEW */}
 
-      <h2>
-        Great results start with
-        <span> working together.</span>
-      </h2>
-
-      <p>
-        We work alongside your team to understand your business,
-        strengthen your search visibility, and turn insights into
-        practical actions that support sustainable growth.
-      </p>
-
-      <div className="collaboration-points">
-        <div>
-          <Check size={17} />
-          Clear priorities and practical recommendations
-        </div>
-
-        <div>
-          <Check size={17} />
-          Reporting that makes progress understandable
-        </div>
-
-        <div>
-          <Check size={17} />
-          A strategy tailored to your business
-        </div>
-      </div>
-
-      <Link to="/contact" className="collaboration-button">
-        Talk to our team
-        <ArrowUpRight size={17} />
-      </Link>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      {/* =====================================================
-          AI ANSWER PREVIEW
-      ===================================================== */}
       <section className="ai-preview-section">
         <div className="container">
           <div className="ai-preview-layout">
             <div>
-              <span className="new-section-label">
-                SEARCH IS CHANGING
-              </span>
+              <span className="new-section-label">SEARCH IS CHANGING</span>
 
               <h2>
                 Don't just rank.
@@ -886,10 +738,9 @@ function Home() {
 
             <div className="ai-answer-window">
               <div className="ai-window-top">
-                <span></span>
-                <span></span>
-                <span></span>
-
+                <span />
+                <span />
+                <span />
                 <small>AI SEARCH PREVIEW</small>
               </div>
 
@@ -901,9 +752,7 @@ function Home() {
               </div>
 
               <div className="ai-answer-result">
-                <div className="ai-result-avatar">
-                  ✦
-                </div>
+                <div className="ai-result-avatar">✦</div>
 
                 <div>
                   <strong>AI answer</strong>
@@ -926,16 +775,14 @@ function Home() {
         </div>
       </section>
 
-      {/* =====================================================
-          AUDIT
-      ===================================================== */}
+      {/* AUDIT */}
+
       <div id="audit">
         <SeoAudit />
       </div>
 
-      {/* =====================================================
-          FINAL CTA
-      ===================================================== */}
+      {/* FINAL CTA */}
+
       <section className="final-new-section">
         <div className="container">
           <div className="final-new-card">
@@ -970,22 +817,24 @@ function Home() {
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      <div className="site-shell">
+        <Navbar />
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/process" element={<ProcessPage />} />
-          <Route path="/case-studies" element={<CaseStudies />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/audits" element={<Audits />} />
-          <Route path="/contacts" element={<Contacts />} />
-        </Routes>
-      </main>
+        <div className="site-main">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/process" element={<ProcessPage />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/audits" element={<Audits />} />
+            <Route path="/contacts" element={<Contacts />} />
+          </Routes>
+        </div>
 
-      <Footer />
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }

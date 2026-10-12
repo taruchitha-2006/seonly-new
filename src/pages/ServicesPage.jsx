@@ -1,3 +1,18 @@
+
+import {
+  ArrowUpRight,
+  Bot,
+  BarChart3,
+  Layers,
+  MapPin,
+  Search,
+  ShoppingBag,
+  TrendingUp,
+} from 'lucide-react';
+
+import { Link } from 'react-router-dom';
+import './ServicesPage.css';
+
 function ServicesPage() {
   const services = [
     {
@@ -11,6 +26,8 @@ function ServicesPage() {
         'Location-based keyword strategy',
         'Reviews and reputation signals',
       ],
+      icon: MapPin,
+      tag: 'Local discovery',
     },
     {
       number: '02',
@@ -23,6 +40,8 @@ function ServicesPage() {
         'Technical SEO optimisation',
         'Authority and link strategy',
       ],
+      icon: TrendingUp,
+      tag: 'Nationwide growth',
     },
     {
       number: '03',
@@ -35,6 +54,8 @@ function ServicesPage() {
         'Search intent mapping',
         'Organic revenue opportunities',
       ],
+      icon: ShoppingBag,
+      tag: 'Product discovery',
     },
     {
       number: '04',
@@ -47,6 +68,8 @@ function ServicesPage() {
         'Organic acquisition',
         'Scalable content systems',
       ],
+      icon: Search,
+      tag: 'Scalable acquisition',
     },
     {
       number: '05',
@@ -59,6 +82,8 @@ function ServicesPage() {
         'Content architecture',
         'Search performance insights',
       ],
+      icon: Layers,
+      tag: 'Search at scale',
     },
     {
       number: '06',
@@ -71,6 +96,8 @@ function ServicesPage() {
         'Content gap analysis',
         'Market opportunity mapping',
       ],
+      icon: BarChart3,
+      tag: 'Opportunity insights',
     },
   ];
 
@@ -78,10 +105,9 @@ function ServicesPage() {
     <section className="services-page">
       <div className="container">
 
-        {/* Hero */}
+        {/* Hero section */}
 
         <div className="services-hero">
-
           <div className="section-label">
             WHAT WE DO
           </div>
@@ -97,66 +123,65 @@ function ServicesPage() {
             We build strategies that help ambitious businesses get found,
             trusted, recommended, and chosen.
           </p>
-
         </div>
 
-
-        {/* Services list */}
+        {/* Six colourful service cards */}
 
         <div className="services-list">
+          {services.map((service) => {
+            const Icon = service.icon;
 
-          {services.map((service) => (
-            <article
-              className="service-page-card"
-              key={service.number}
-            >
+            return (
+              <article
+                className="service-page-card"
+                key={service.number}
+              >
+                <div className="service-card-top">
+                  <span className="service-page-number">
+                    {service.number}
+                  </span>
 
-              <div className="service-page-number">
-                {service.number}
-              </div>
+                  <div className="service-page-icon">
+                    <Icon size={27} strokeWidth={1.8} />
+                  </div>
+                </div>
 
-              <div className="service-page-main">
-
-                <h2>
-                  {service.title}
-                </h2>
+                <h2>{service.title}</h2>
 
                 <p className="service-page-description">
                   {service.description}
                 </p>
 
                 <div className="service-page-points">
-
                   {service.points.map((point) => (
                     <div
                       className="service-page-point"
                       key={point}
                     >
-                      <span>+</span>
+                      <span>✓</span>
                       {point}
                     </div>
                   ))}
-
                 </div>
 
-              </div>
+                <div className="service-page-card-footer">
+                  <span className="service-page-tag">
+                    {service.tag}
+                  </span>
 
-              <div className="service-page-arrow">
-                ↗
-              </div>
-
-            </article>
-          ))}
-
+                  <div className="service-page-arrow">
+                    <ArrowUpRight size={18} />
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
-
-        {/* AI SEO section */}
+        {/* AI Search section */}
 
         <div className="ai-seo-section">
-
           <div className="ai-seo-content">
-
             <div className="section-label">
               THE NEXT LAYER OF SEARCH
             </div>
@@ -177,15 +202,24 @@ function ServicesPage() {
               We combine proven SEO with AI search optimisation so your
               business can become part of the answers people trust and act on.
             </p>
-
           </div>
 
+          {/* Animated search network */}
 
-          <div className="ai-search-visual">
+          <div
+            className="ai-search-visual"
+            role="img"
+            aria-label="SEOOnly connected to Google, ChatGPT, Gemini, and Perplexity"
+          >
+            <div className="ai-search-glow"></div>
+
+            <div className="ai-search-ring ring-one"></div>
+            <div className="ai-search-ring ring-two"></div>
 
             <div className="ai-search-center">
-              <span className="ai-search-dot"></span>
-              SEOONLY
+              <Bot size={34} />
+              <span>SEOONLY</span>
+              <small>Search intelligence</small>
             </div>
 
             <div className="ai-search-node node-google">
@@ -203,21 +237,13 @@ function ServicesPage() {
             <div className="ai-search-node node-perplexity">
               Perplexity
             </div>
-
-            <div className="ai-search-ring ring-one"></div>
-            <div className="ai-search-ring ring-two"></div>
-
           </div>
-
         </div>
 
-
-        {/* CTA */}
+        {/* Final call to action */}
 
         <div className="services-bottom">
-
           <div>
-
             <div className="services-bottom-label">
               READY TO GROW?
             </div>
@@ -227,17 +253,15 @@ function ServicesPage() {
               <br />
               is already searching.
             </h2>
-
           </div>
 
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="primary-button"
           >
             Start a Conversation
-            <span>↗</span>
-          </a>
-
+            <ArrowUpRight size={17} />
+          </Link>
         </div>
 
       </div>
